@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An educational infographic and visual guide to FDA 21 CFR Part 11 regulations, data integrity, ALCOA+, cloud compliance, and computer system validation for life sciences.">
+    <meta property="og:title" content="An Educational Guide to 21 CFR Part 11 & Data Integrity">
+    <meta property="og:description" content="A visual guide to FDA regulations, data integrity, ALCOA+, cloud compliance, and computer system validation.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://placehold.co/1200x630/005F73/FFFFFF?text=21+CFR+Part+11+Guide">
+    <title>Infographic: An Educational Guide to 21 CFR Part 11 & Data Integrity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0A9396, #005F73);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #005F73;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #4b5563;
+            margin-bottom: 2rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .alcoa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .alcoa-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+        }
+        .alcoa-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 95, 115, 0.1);
+        }
+        .alcoa-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #005F73;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+        #backToTopBtn:hover {
+            background-color: #0A9396;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-slate-100 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-[#005F73]">Digital Compliance in Life Sciences</h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#mission" class="text-gray-600 hover:text-[#0A9396] transition-colors">My Approach</a>
+                <a href="#violations" class="text-gray-600 hover:text-[#0A9396] transition-colors">Common Findings</a>
+                <a href="#cloud" class="text-gray-600 hover:text-[#0A9396] transition-colors">Cloud</a>
+                <a href="#validation" class="text-gray-600 hover:text-[#0A9396] transition-colors">Validation</a>
+                <a href="#integrity" class="text-gray-600 hover:text-[#0A9396] transition-colors">Integrity</a>
+                <a href="#foundation" class="text-gray-600 hover:text-[#0A9396] transition-colors">Foundation</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section class="text-center my-12" aria-labelledby="main-title">
+            <h2 id="main-title" class="text-4xl md:text-6xl font-black mb-4 gradient-text">An Educational Guide to 21 CFR Part 11</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                An educational visual guide to FDA regulations for electronic records and signatures, helping to ensure data integrity from concept to cloud.
+            </p>
+        </section>
+
+        <section id="mission" class="my-16 scroll-mt-20" aria-labelledby="mission-title">
+            <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h3 id="mission-title" class="text-2xl font-bold mb-4 text-[#005F73]">🚀 Bridging the Gap Between IT and FDA Compliance 💻⚖️</h3>
+                    <p class="text-gray-700 italic text-lg mb-6">"After years of navigating the complexities of IT systems in regulated environments, I realized there was a need to demystify 21 CFR Part 11 using a Keep It Simple & Smart (KISS) approach. Perhaps, if I get the chance, I will write a book about it."</p>
+                    <p class="text-gray-800 mb-4 text-lg">
+                        My goal is to break down the communication barriers between departments. Achieving compliance is a continuous team effort, not a one-time task. While out-of-the-box software can streamline the process, it doesn't guarantee compliance. True compliance is a shared responsibility that requires risk-based thinking, validated infrastructure, and smarter systems design from everyone involved.
+                    </p>
+                     <p class="text-lg font-semibold text-gray-600 mb-6">If you’ve ever felt stuck between confusing FDA rules and unclear technical implementation paths, this guide is for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="violations" class="my-16 scroll-mt-20" aria-labelledby="violations-title">
+            <h3 id="violations-title" class="section-title">Learning from Missteps: Common FDA Findings</h3>
+            <p class="section-subtitle">FDA warning letters consistently highlight a few key areas of failure. Understanding these common pitfalls is the first step to building a proactive and robust compliance strategy.</p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="chart-container h-80 md:h-96">
+                             <canvas id="violationsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="space-y-4">
+                            <div class="bg-red-50 p-3 rounded-lg border-l-4 border-red-500">
+                                <h4 class="font-bold text-[#9B2226]">Shared Logins / Poor Access Control</h4>
+                                <p class="text-sm text-gray-600">Destroys attributability. If everyone uses the same 'analyst' login, no action can be traced to a specific person.</p>
+                                <p class="mt-2 text-xs text-gray-500 italic"><span class="font-semibold">Real-world example:</span> An FDA warning letter cited a firm where all lab analysts used a single "Administrator" login for HPLC systems, making it impossible to trace data changes to a specific person.</p>
+                            </div>
+                             <div class="bg-orange-50 p-3 rounded-lg border-l-4 border-orange-500">
+                                <h4 class="font-bold text-[#CA6702]">Inadequate or Missing Audit Trails</h4>
+                                <p class="text-sm text-gray-600">Makes it impossible to reconstruct events or verify that data hasn't been altered. Failure to review audit trails is also a major finding.</p>
+                                <p class="mt-2 text-xs text-gray-500 italic"><span class="font-semibold">Real-world example:</span> A firm received a warning letter after investigators found that the audit trail feature on multiple laboratory instruments had been disabled, allowing data to be deleted without a record.</p>
+                            </div>
+                             <div class="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
+                                <h4 class="font-bold text-[#EE9B00]">Lack of System Validation</h4>
+                                <p class="text-sm text-gray-600">No objective evidence that the system works as intended, especially for tools like GxP spreadsheets.</p>
+                                <p class="mt-2 text-xs text-gray-500 italic"><span class="font-semibold">Real-world example:</span> The FDA has frequently cited companies for using unvalidated Excel spreadsheets with complex formulas to calculate final batch release results, creating a risk of inaccurate data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cloud" class="my-16 scroll-mt-20" aria-labelledby="cloud-title">
+            <h3 id="cloud-title" class="section-title">Cloud Compliance & Shared Responsibility</h3>
+            <p class="section-subtitle">Using cloud services is a partnership. As you move from your own server room (On-Prem) to a fully managed service (SaaS), the vendor handles more of the technical heavy lifting. This relationship must be crystal clear in your Service Level Agreement (SLA).</p>
+            <div class="bg-amber-100 border-l-4 border-amber-500 text-amber-800 p-4 rounded-md my-8 max-w-4xl mx-auto text-center">
+                <p class="font-bold text-lg">The Golden Rule of Cloud Compliance: Your company is ALWAYS responsible for your data, who can access it, and proving the whole setup is GxP compliant.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <div class="overflow-x-auto">
+                    <table class="w-full min-w-[600px] border-collapse text-center">
+                        <thead>
+                            <tr class="border-b-2 border-gray-300">
+                                <th class="p-3 font-semibold">Who Manages What?</th>
+                                <th class="p-3 font-semibold">On-Premise</th>
+                                <th class="p-3 font-semibold">IaaS</th>
+                                <th class="p-3 font-semibold">PaaS</th>
+                                <th class="p-3 font-semibold">SaaS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200"><td class="p-3 font-medium text-gray-700">Physical Servers & Network</td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#0A9396] text-white">Vendor</div></td><td><div class="p-2 rounded bg-[#0A9396] text-white">Vendor</div></td><td><div class="p-2 rounded bg-[#0A9396] text-white">Vendor</div></td></tr>
+                            <tr class="border-b border-gray-200"><td class="p-3 font-medium text-gray-700">Operating System (OS)</td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#0A9396] text-white">Vendor</div></td><td><div class="p-2 rounded bg-[#0A9396] text-white">Vendor</div></td></tr>
+                            <tr class="border-b border-gray-200"><td class="p-3 font-medium text-gray-700">The Application Itself</td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#0A9396] text-white">Vendor</div></td></tr>
+                            <tr class="border-b border-gray-200"><td class="p-3 font-medium text-gray-700">Your Specific Configuration</td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td><td><div class="p-2 rounded bg-[#005F73] text-white">You</div></td></tr>
+                             <tr class="border-b border-gray-200"><td class="p-3 font-medium text-gray-700">Your Data & User Access</td><td><div class="p-2 rounded bg-[#EE9B00] text-black">You</div></td><td><div class="p-2 rounded bg-[#EE9B00] text-black">You</div></td><td><div class="p-2 rounded bg-[#EE9B00] text-black">You</div></td><td><div class="p-2 rounded bg-[#EE9B00] text-black">You</div></td></tr>
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+        </section>
+
+        <section id="validation" class="my-16 scroll-mt-20" aria-labelledby="validation-title">
+            <h3 id="validation-title" class="section-title">Proving Control: A Framework for Validation</h3>
+            <p class="section-subtitle">Validation provides documented, objective evidence that a system is fit for its intended use. The IQ/OQ/PQ model provides a structured and logical framework for this process.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <h4 class="text-2xl font-bold text-[#0A9396] mb-2">Step 1: IQ</h4>
+                    <p class="font-semibold mb-3">Installation Qualification</p>
+                    <p class="font-bold text-gray-600 mb-4">The "What": Verifying the Setup</p>
+                    <p class="text-sm text-left text-gray-700">This initial step confirms that the system and its components are installed correctly according to specifications. It's the technical checklist to ensure the foundation is solid before you build on it.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <h4 class="text-2xl font-bold text-[#EE9B00] mb-2">Step 2: OQ</h4>
+                    <p class="font-semibold mb-3">Operational Qualification</p>
+                    <p class="font-bold text-gray-600 mb-4">The "How": Testing the Functions</p>
+                    <p class="text-sm text-left text-gray-700">Here, you test the system's functions to ensure they operate as intended across their specified ranges. This phase confirms that the system's features work correctly in a controlled environment.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <h4 class="text-2xl font-bold text-[#AE2012] mb-2">Step 3: PQ</h4>
+                    <p class="font-semibold mb-3">Performance Qualification</p>
+                    <p class="font-bold text-gray-600 mb-4">The "Why": Confirming the Purpose</p>
+                    <p class="text-sm text-left text-gray-700">The final step verifies that the system meets the user's needs and is reliable for its intended use within the actual business process. This demonstrates the system performs correctly with trained users and real-world scenarios.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="integrity" class="my-16 scroll-mt-20" aria-labelledby="integrity-title">
+            <h3 id="integrity-title" class="section-title">Data Integrity Principles</h3>
+            <p class="section-subtitle">To prove your electronic data is trustworthy, it must adhere to a set of internationally recognized principles. This framework, often called ALCOA+, is the gold standard for ensuring data has integrity.</p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="alcoa-grid">
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#005F73]" role="img" aria-label="Icon of a person representing Attributable">👤</div><h5 class="font-bold">Attributable</h5><p class="text-xs text-gray-500">Who did it & When?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#005F73]" role="img" aria-label="Icon of an open book representing Legible">📖</div><h5 class="font-bold">Legible</h5><p class="text-xs text-gray-500">Is it Readable?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#005F73]" role="img" aria-label="Icon of a stopwatch representing Contemporaneous">⏱️</div><h5 class="font-bold">Contemporaneous</h5><p class="text-xs text-gray-500">Recorded on Time?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#005F73]" role="img" aria-label="Icon of a document representing Original">📄</div><h5 class="font-bold">Original</h5><p class="text-xs text-gray-500">Is it the First Record?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#005F73]" role="img" aria-label="Icon of a checkmark representing Accurate">✔️</div><h5 class="font-bold">Accurate</h5><p class="text-xs text-gray-500">Is it Correct?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#EE9B00]" role="img" aria-label="Icon of a plus sign representing Complete">➕</div><h5 class="font-bold">Complete</h5><p class="text-xs text-gray-500">Is Anything Missing?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#EE9B00]" role="img" aria-label="Icon of chain links representing Consistent">🔗</div><h5 class="font-bold">Consistent</h5><p class="text-xs text-gray-500">Does it Make Sense?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#EE9B00]" role="img" aria-label="Icon of an hourglass representing Enduring">⏳</div><h5 class="font-bold">Enduring</h5><p class="text-xs text-gray-500">Will it Last?</p></div>
+                    <div class="alcoa-card"><div class="alcoa-icon text-[#EE9B00]" role="img" aria-label="Icon of a magnifying glass representing Available">🔍</div><h5 class="font-bold">Available</h5><p class="text-xs text-gray-500">Can You Find It?</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="foundation" class="my-16 scroll-mt-20" aria-labelledby="foundation-title">
+            <h3 id="foundation-title" class="section-title">Foundational Part 11 Requirements</h3>
+            <p class="section-subtitle">With the guiding principles established, let's examine the core regulatory requirements that Part 11 mandates for electronic systems and signatures.</p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h4 class="text-2xl font-bold text-[#005F73] mb-4">The 11 Core Controls (§ 11.10)¹</h4>
+                        <p class="text-gray-600 mb-4">These are the essential controls for any "closed" system (one managed on your own internal network).</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">🛡️</div><h5 class="font-bold">Validation</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">📄</div><h5 class="font-bold">Accurate Copies</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">💾</div><h5 class="font-bold">Record Protection</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">🔑</div><h5 class="font-bold">Access Control</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#EE9B00]">👣</div><h5 class="font-bold">Audit Trails</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">➡️</div><h5 class="font-bold">Operational Checks</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">👤</div><h5 class="font-bold">Authority Checks</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">💻</div><h5 class="font-bold">Device Checks</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">🎓</div><h5 class="font-bold">Training</h5></div>
+                            <div class="kpi-card text-sm"><div class="icon-style text-[#0A9396]">✍️</div><h5 class="font-bold">Accountability</h5></div>
+                            <div class="kpi-card col-span-2 text-sm"><div class="icon-style text-[#0A9396]">📚</div><h5 class="font-bold">Documentation Control</h5></div>
+                        </div>
+                    </div>
+                     <div class="mt-8 lg:mt-0">
+                        <h4 class="text-2xl font-bold text-[#005F73] mb-4">Electronic Signature Requirements (§11.100)²</h4>
+                        <p class="text-gray-600 mb-4">For an electronic signature to be legally equivalent to a handwritten one, it must satisfy these key requirements:</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-2xl text-[#0A9396] mr-3">&#9312;</span><span><strong>Uniqueness:</strong> Each signature must be unique to one individual and never reassigned.</span></li>
+                            <li class="flex items-start"><span class="text-2xl text-[#0A9396] mr-3">&#9313;</span><span><strong>Identity Verification:</strong> The organization must formally verify an individual's identity before issuing signature credentials.</span></li>
+                            <li class="flex items-start"><span class="text-2xl text-[#0A9396] mr-3">&#9314;</span><span><strong>Formal FDA Certification:</strong> A physical, hand-signed letter must be submitted to the FDA, certifying that the organization considers its electronic signatures to be the legally binding equivalent of handwritten signatures.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 border-t pt-6 text-center">
+                     <p class="text-xs text-gray-500 italic mb-2">This guide is for educational purposes only. Always consult the current, official regulations for compliance decisions.</p>
+                     <a href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-11" target="_blank" class="text-blue-600 hover:underline font-semibold">View the full text of 21 CFR Part 11 on eCFR.gov</a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <button id="backToTopBtn" title="Go to top">↑</button>
+
+    <footer class="bg-[#005F73] text-white mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="text-gray-300 mb-2">An Educational Guide by Milad</p>
+            <p class="text-sm text-gray-400 italic mb-4">KISS (Keep It Simple & Smart)</p>
+            <div id="sources" class="text-xs text-gray-400 border-t border-gray-600 pt-4 max-w-4xl mx-auto">
+                <h4 class="font-bold text-sm text-gray-200 mb-2">Sources & Citations</h4>
+                <p>¹ Refers to Title 21 CFR Part 11, Section 11.10 - Controls for closed systems.</p>
+                <p>² Refers to Title 21 CFR Part 11, Section 11.100 - General requirements for electronic signatures.</p>
+                <p class="mt-4 text-gray-500">Last Updated: July 9, 2025</p>
+            </div>
+        </div>
+    </footer>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const violationsChartCtx = document.getElementById('violationsChart');
+        if (violationsChartCtx) {
+            new Chart(violationsChartCtx.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Inadequate Audit Trails', 'Lack of Validation', 'Shared Logins / No Access Control', 'Other Issues'],
+                    datasets: [{
+                        label: 'Frequency of Findings',
+                        data: [45, 30, 20, 5],
+                        backgroundColor: ['#CA6702', '#EE9B00', '#AE2012', '#94D2BD'],
+                        borderColor: '#ffffff',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                         legend: { position: 'bottom', labels: { boxWidth: 15, padding: 20, color: '#4b5563', font: { family: "'Inter', sans-serif" } } },
+                         title: { display: true, text: 'Common FDA Warning Letter Violations', color: '#374151', font: { size: 14, weight: 'bold', family: "'Inter', sans-serif" }}
+                    }
+                }
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top Button Logic
+        let backToTopBtn = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+
+        backToTopBtn.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
